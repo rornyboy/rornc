@@ -1,0 +1,8 @@
+$("document").ready(function(){if(localStorage.getItem("cookie_privacy_shown")!=="1"){window.FJTools.loadCSS('/media/cookies/css/cookies-banner.css');$("footer").append('<div class="cookie_ban">\n'+
+'    <div>\n'+
+'        <p>We use cookies to ensure that you get the best experience on our website. By using this website, you consent\n'+
+'            to the use of cookies.</p>\n'+
+'        <a href="/cookie_policy.html">Learn more</a>\n'+
+'        <button>Got It</button>\n'+
+'    </div>\n'+
+'</div>');$(".cookie_ban >div >button").on("click",function(){$(".cookie_ban").hide();localStorage.setItem("cookie_privacy_shown","1");});}})

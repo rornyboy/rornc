@@ -1,0 +1,555 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white: hsl(0, 0%, 100%);
+    --black:hsl(0, 0%, 0%);
+    --darkGray: hsl(0, 0%, 55%);
+    --VeryDarkGray: hsl(0, 0%, 41%);
+    --Pink: hsl(322, 100%, 66%);
+    --VeryPaleCyan: hsl(193, 100%, 96%);
+    --VeryDarkCyan: hsl(192, 100%, 9%);
+    --GrayishBlue: hsl(208, 11%, 55%);
+    --Softorange: hsl(35, 77%, 62%);
+    --Softred: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Darkgrayishblue: hsl(236, 13%, 42%);
+    --Verydarkblue: hsl(240, 100%, 5%);
+
+}a{
+    text-decoration: none;
+    color: var(--black);
+}
+.header{
+    width: 100%;
+    height: 100vh;
+    background: url("./images/tecnology.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--black);
+    padding: 1rem 2rem;
+    overflow: hidden;
+}
+.fow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li{
+    list-style-type: none;
+    display: inline;
+    margin-left: .7rem;
+    position: relative;
+}
+ul li a{
+    padding: .7rem;
+    transition: border-bottom .4rem;
+    font-size: larger;
+    color: var(--Off-white);
+}
+ul li a::after{
+    content: '';
+    width: 0;
+    height: .1rem;
+    background: var(--black);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -.7rem;
+    transition: width .4s;
+}
+ul li a:hover::after{
+    width: 50%;
+}
+.fow .open{
+    display: none;
+}
+.header h1{
+    margin-top: 15%;
+    color: var(--white);
+    font-size: 5rem;
+    width: 100%;
+    font-family: 'Josefin Sans',sans-serif;
+    font-weight: 300;
+    border: .1rem solid var(--white);
+    padding: .9rem;
+    text-transform: capitalize;
+}
+
+
+
+         /* ownership */
+
+.col{
+    padding-top: 5px;
+    background: rgb(215, 208, 208);
+}    
+.head h1{
+    text-align: center;
+    font-size: 4rem;
+}
+.ship img{
+    width: 13%;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.ship{
+    padding-left: 3rem;
+    display: flex;
+    padding-top: 1rem;
+}
+.ship p{
+    font-size: 2rem;
+    width: 50%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+.ship2 img{
+    width: 14%;
+    height: 35vh;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.ship2{
+    padding-left: 3rem;
+    display: flex;
+    padding-top: 1rem;
+}
+.ship2 p{
+    font-size: 2rem;
+    width: 50%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+       /*about us*/
+
+.section-cost{
+    background: rgb(176, 149, 154);
+}
+.head-cost h1{
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Josefin Sans',sans-serif;
+}
+.head-cost p{
+    padding-top: 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans',sans-serif;
+}
+.head-cost h2{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 3rem;
+    font-family: 'Josefin Sans',sans-serif;
+}
+.images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+}
+.images1{
+    width: 230px;
+    height: 180px;
+    position: relative;
+    margin-right: 3rem;
+}
+.cost1 img{
+    width: 100%;
+    height: 180px;
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    border: .3rem solid blue;
+}
+.content1{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
+.content1:hover{
+    opacity: 1;
+}
+.content1 h4{
+    font-size: larger;
+    cursor: pointer;
+}
+.images2{
+    width: 230px;
+    height: 180px;
+    position: relative;
+}
+.cost2 img{
+    width: 100%;
+    height: 180px;
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    border: .3rem solid  blue;
+}
+.content2{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s; 
+}
+.content2:hover{
+    opacity: 1;
+}
+.content2 h4{
+    font-size: larger;
+    cursor: pointer;
+}
+.images3{
+    width: 230px;
+    height: 180px;
+    position: relative;
+    margin-left: 3rem;
+}
+.cost3 img{
+    width: 100%;
+    height: 180px;
+    display: block;
+    margin: auto;
+    border-radius: 1rem;
+    border: .3rem solid blue;
+}
+.content3{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s; 
+}
+.content3:hover{
+    opacity: 1;
+}
+.content3 h4{
+    font-size: larger;
+    cursor: pointer;
+}
+/*contact us*/
+.nass-he{
+    background: rgb(201, 199, 195);
+}
+.nass{
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Josefin Sans',sans-serif;
+    padding-top: 3rem;
+}
+.nass span{
+    color: rgb(118, 54, 84);
+}
+form{
+    width: 70%;
+    margin: 1rem auto;
+}
+label{
+    display: none;
+}
+input{
+    width: 100%;
+    margin: .5rem 0;
+    padding: .4rem;
+    outline: none;
+    border-radius: .1rem;
+    /* border: 1rem solid lightgrey; */
+    border-bottom: 1rem solid lightgrey;
+}
+input:hover{
+    border-bottom: .1rem solid crimson;
+}
+input:focus{
+    background: lightgrey;
+}
+input:focus::placeholder{
+    color: crimson;
+}
+input::placeholder{
+    /* text-transform: uppercase;
+    color: crimson; */
+    font-size: .6rem;
+}
+input[type ='submit']{
+    background: url("./images/favicon\ \(1\).ico");
+    background-repeat: no-repeat;
+    padding-left: 2rem;
+}
+input[type ='submit']{
+    background: crimson;
+    border: none;
+    color: white;
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    border-radius: .3rem;
+    cursor: pointer;
+    width: 50%;
+    transition: all 1s;
+}
+input[type = 'submit']:hover{
+    border: .1rem solid crimson;
+    background: inherit;
+    color: black;
+}
+.container{
+    width: 50%;
+    margin: 3rem auto 1rem auto;
+}
+.container > h2{
+    margin-bottom: 1rem;
+    color: crimson;
+    text-align: center;
+}
+.container > div{
+    background: yellowgreen;
+    width: 100%;
+    border-radius: .2rem;
+}
+button{
+    width: 30%;
+    background: inherit;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+    margin-left: .2rem;
+
+}
+.input_email{
+    width: 60%;
+    display: inline;
+    padding: 1rem;
+    margin: 0;
+    border: none;
+    background: white;
+}
+.input_email:focus{
+    border: none;
+}
+.input_email:focus::placeholder{
+    color: yellowgreen;
+}
+/*footer*/
+
+.footer{
+    width: 100%;
+    height: 100%;
+    background: var(--Darkgrayishblue);
+    padding: 2rem;
+    margin-top: 2%;
+}
+.footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+}
+.footitem1,.footitem2,.footitem3,.footitem4{
+    flex: 1;
+}
+.footitem-info{
+    display: flex;
+    gap: .5rem;
+    margin-top: 2rem;
+}
+.footitem-info img{
+    width: 20px;
+    height: 20px;
+}
+.footitem2 p{
+    margin-top: 2rem;
+    cursor: pointer;
+
+}
+.footitem3 ul li{
+    list-style-type: none;
+    margin-top: 2rem;
+}
+.footitem3 ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.footitem4 div{
+    margin-bottom: 3rem;
+}
+.footitem4 div img{
+    border: 1px solid white;
+    padding: .4rem;
+    border-radius: 50%;
+    margin-left: .5rem;
+    cursor: pointer;
+    transition: 1s;
+}
+.footitem4 div img:hover{
+    color: var(--Pink);
+    border: 1rem solid var(--Pink);
+}
+/* .img-logo{
+    filter: grayscale(50)brightness(50);
+} */
+@media(max-width: 480px){
+    .fow img{
+        margin-top: -7rem;
+    }
+    .fow .open{
+    display: block;
+    }
+    .nav ul li{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 3.3rem;
+        background-color: var(--background);
+        width: 100%;
+        padding: 1rem 0 1rem 2rem;
+        /* transition: width .4s; */
+    }
+    .header{
+        width: 100%;
+        height: 85vh;
+        background: url("./images/tecnology.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: var(--black);
+        padding: 1rem 2rem;
+        overflow: hidden;
+    }
+    .header h1{
+        margin-top: 30%;
+        color: var(--white);
+        font-size: 2rem;
+        width: 100%;
+        font-family: 'Josefin Sans',sans-serif;
+        font-weight: 300;
+        border: .1rem solid var(--white);
+        padding: .9rem;
+        text-transform: capitalize;
+    }
+    .head h1{
+        font-size: 2.3rem;
+    }
+    .ship img{
+        width: 30%;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+    .ship{
+        padding-left: 1rem;
+        display: flex;
+        padding-top: 1rem;
+    }
+    .ship p{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .ship2 img{
+        width: 30%;
+        height: 35vh;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+    .ship2{
+        padding-left: 1rem;
+        display: flex;
+        padding-top: 1rem;
+    }
+    .ship2 p{
+        font-size: 1rem;
+        width: 100%;
+        padding-top: 2rem;
+        padding-left: 2rem;
+    }
+    .head-cost h1{
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 2rem;
+        font-family: 'Josefin Sans',sans-serif;
+    }
+    .head-cost p{
+        padding-top: 1rem;
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: 'Josefin Sans',sans-serif;
+    }
+    .head-cost h2{
+        text-align: center;
+        font-size: 1.3rem;
+        padding-top: 1rem;
+        font-family: 'Josefin Sans',sans-serif;
+    }
+    .foot-title{
+        width: 80%;
+    }
+    .foot-title h2{
+        font-size: 1rem;
+    }
+    .footer-wrapper{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: .6rem;
+    }
+    .footitem-info{
+        margin-top: 1rem;
+    }
+    .footitem-info p{
+        width: 70%;
+    }
+    .img-logo{
+        width: 50%;
+    }
+    .footitem2 p{
+        margin-top: 1rem;
+    }
+    .footitem3 ul li{
+        margin-top: 1rem;
+    }
+    .footitem4{
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .footitem4 div{
+        margin-bottom: .7rem;
+    }
+}

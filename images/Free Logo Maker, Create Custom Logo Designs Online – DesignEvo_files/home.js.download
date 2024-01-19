@@ -1,0 +1,40 @@
+function Base64(){let _keyStr="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@/=";this.encode=function(input){var output="";var chr1,chr2,chr3,enc1,enc2,enc3,enc4;var i=0;input=_utf8_encode(input);while(i<input.length){chr1=input.charCodeAt(i++);chr2=input.charCodeAt(i++);chr3=input.charCodeAt(i++);enc1=chr1>>2;enc2=((chr1&3)<<4)|(chr2>>4);enc3=((chr2&15)<<2)|(chr3>>6);enc4=chr3&63;if(isNaN(chr2)){enc3=enc4=64}else{if(isNaN(chr3)){enc4=64}}
+output=output+_keyStr.charAt(enc1)+_keyStr.charAt(enc2)+_keyStr.charAt(enc3)+_keyStr.charAt(enc4)}
+return output};this.decode=function(input){var output="";var chr1,chr2,chr3;var enc1,enc2,enc3,enc4;var i=0;input=input.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(i<input.length){enc1=_keyStr.indexOf(input.charAt(i++));enc2=_keyStr.indexOf(input.charAt(i++));enc3=_keyStr.indexOf(input.charAt(i++));enc4=_keyStr.indexOf(input.charAt(i++));chr1=(enc1<<2)|(enc2>>4);chr2=((enc2&15)<<4)|(enc3>>2);chr3=((enc3&3)<<6)|enc4;output=output+String.fromCharCode(chr1);if(enc3!=64){output=output+String.fromCharCode(chr2)}
+if(enc4!=64){output=output+String.fromCharCode(chr3)}}
+output=_utf8_decode(output);return output};_utf8_encode=function(string){string=string.replace(/\r\n/g,"\n");var utftext="";for(var n=0;n<string.length;n++){var c=string.charCodeAt(n);if(c<128){utftext+=String.fromCharCode(c)}else{if((c>127)&&(c<2048)){utftext+=String.fromCharCode((c>>6)|192);utftext+=String.fromCharCode((c&63)|128)}else{utftext+=String.fromCharCode((c>>12)|224);utftext+=String.fromCharCode(((c>>6)&63)|128);utftext+=String.fromCharCode((c&63)|128)}}}
+return utftext};_utf8_decode=function(utftext){var string="";var i=0;var c=c1=c2=0;while(i<utftext.length){c=utftext.charCodeAt(i);if(c<128){string+=String.fromCharCode(c);i++}else{if((c>191)&&(c<224)){c2=utftext.charCodeAt(i+1);string+=String.fromCharCode(((c&31)<<6)|(c2&63));i+=2}else{c2=utftext.charCodeAt(i+1);c3=utftext.charCodeAt(i+2);string+=String.fromCharCode(((c&15)<<12)|((c2&63)<<6)|(c3&63));i+=3}}}
+return string}}
+window.Base64=new Base64();window.currentLanguageHref=()=>{let url=document.location.href;let tag="";if(url.indexOf("/cn/")!=-1){tag="cn/"}else{if(url.indexOf("/tw/")!=-1){tag="tw/"}else{if(url.indexOf("/de/")!=-1){tag="de/"}else{if(url.indexOf("/es/")!=-1){tag="es/"}else{if(url.indexOf("/fr/")!=-1){tag="fr/"}else{if(url.indexOf("/pt/")!=-1){tag="pt/"}else{if(url.indexOf("/jp/")!=-1){tag="jp/"}}}}}}}
+return tag}
+jQuery(".template-search-popular li").click((e)=>{let doms=$(".template-search-popular > li")
+for(let i=0;i<doms.length;i++){$(doms[i]).removeClass('active')}
+$(e.target).addClass('active')
+let index=$(e.target).index();let keyword=$(e.target).html();keywordToApp(keyword,"tagClick")})
+jQuery(".home-page-search-button").click(()=>{let keyword=$("#searchInput").val();keywordToApp(keyword,"search")});jQuery("#searchInput").on("keydown",(evt)=>{if(13===evt.keyCode)
+{let keyword=$("#searchInput").val();keywordToApp(keyword,"search")}});jQuery(".home-faq-item").click(function(){let dom=$($(this)[0]);if(dom.hasClass('active')){dom.removeClass('active')
+dom.find('.home-faq-item-content').slideUp(166);}else{dom.siblings('.home-faq-item').removeClass('active');dom.addClass('active').siblings('.home-faq-item').find('.home-faq-item-content').slideUp(166);dom.find('.home-faq-item-content').slideDown(166);}});function keywordToApp(keyword,type){if(!keyword){return}
+keyword=stripscript(keyword);let newKeyword=keyword.trim().replace(/\s+/g,"-").toLowerCase();window.open("https://www.designevo.com/"+window.currentLanguageHref()+"logo-maker/?keyword="+window.Base64.encode(newKeyword),"_blank");if(type=="tagClick"){ga("send","event","tag_search","click",keyword,1)}else{ga("send","event","web_search","click","search_icon",1)}}
+function stripscript(s){var pattern=new RegExp("[`~!@#$^&*%()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]");var rs="";for(var i=0;i<s.length;i++){rs=rs+s.substr(i,1).replace(pattern,"")}
+return rs}
+if(window.language_tag==='en'){let btnMoveLeftNode=document.getElementById("home-say-item-left-button");let btnMoveRightNode=document.getElementById("home-say-item-right-button");let moveBox=document.getElementById("home-say-item-box");let count=moveBox.children.length;for(let i=0;i<count;i++){moveBox.children[i].style.left=(i*1000)+"px"}
+let clickNumber=1;let leftIsClick=false;btnMoveRightNode.onclick=function(){leftIsClick=true;$(btnMoveLeftNode).find('svg').addClass('active')
+$(btnMoveLeftNode).show()
+clickNumber+=1
+for(let i=0;i<count;i++){moveBox.children[i].style.left=parseFloat(moveBox.children[i].style.left)-1000+'px';}
+if(clickNumber>=count){$(btnMoveRightNode).hide()
+$(btnMoveRightNode).find('svg').removeClass('active')
+$(btnMoveRightNode).find('svg').addClass('disabled')
+return false}}
+btnMoveLeftNode.onclick=function(){if(!leftIsClick){$(btnMoveLeftNode).hide()
+$(btnMoveLeftNode).find('svg').removeClass('active')
+$(btnMoveLeftNode).find('svg').addClass('disabled')
+return false;}
+$(btnMoveRightNode).show()
+$(btnMoveRightNode).find('svg').addClass('active')
+clickNumber-=1
+for(let i=0;i<count;i++){moveBox.children[i].style.left=parseFloat(moveBox.children[i].style.left)+1000+'px';}
+if(clickNumber<=1){$(btnMoveLeftNode).hide()
+$(btnMoveLeftNode).find('svg').removeClass('active')
+$(btnMoveLeftNode).find('svg').addClass('disabled')
+return false}}}
